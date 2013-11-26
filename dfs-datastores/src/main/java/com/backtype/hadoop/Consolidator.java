@@ -335,7 +335,7 @@ public class Consolidator {
                 if(c.size()>1) {
                     String rand = UUID.randomUUID().toString();
                     String targetFile = new Path(target,
-                        "" + rand.charAt(0) + rand.charAt(1) + "/cons" +
+                        "" + "cons" + "/cons" +
                         rand + extension).toString();
                     ret.add(new ConsolidatorSplit(pathsToStrs(c), targetFile));
 
