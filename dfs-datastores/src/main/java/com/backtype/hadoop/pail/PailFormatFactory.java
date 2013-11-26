@@ -37,7 +37,7 @@ public class PailFormatFactory {
             return new SequenceFileFormat(args);
         } else {
             try {
-                return (PailFormat) Class.forName(format).newInstance();
+                return (PailFormat) PailFormatFactory.class.getClassLoader().loadClass(format).newInstance();
             } catch(ClassNotFoundException e) {
                 throw new RuntimeException(e);
             } catch(InstantiationException e) {
